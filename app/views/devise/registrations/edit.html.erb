@@ -1,0 +1,48 @@
+<% @title = "Edit #{resource_name.to_s.humanize}" %>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+  
+  <% if current_user.admin? %>
+  <div><%= f.check_box :admin %><%= f.label :admin, 'Admin?' %></div><br />
+  <% end %>
+  
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :disabled => 'disabled' %></div>
+  
+  <div><%= f.label :full_name %><br />
+  <%= f.text_field :full_name %></div>
+  
+  <div><%= f.label :cell_phone, "Cell Phone (numbers only)" %><br />
+  <%= f.text_field :cell_phone %></div>
+  
+  <div><%= f.label :regen_time, 'Time for regeneration' %><br />
+  <%= f.text_field :regen_time %></div>
+  
+  <br />
+  <div><%= f.check_box :requests_newsletter %><%= f.label :requests_newsletter %></div>
+  
+  <br />
+  <div><%= f.check_box :active %><%= f.label :active, 'Web Service Active' %> <%= image_tag 'question.png', :alt => 'Designates whether your web service is turned on or off' %></div>
+  
+  <br />
+  
+  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+  <%= f.password_field :password, :autocomplete => "off" %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  <%= f.password_field :current_password %></div>
+  
+  <br />
+  <div><%= f.submit "Update", :class => 'btn' %></div>
+  <br /><br />
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
+
+<%= link_to "Back", :back, :class => 'btn small light-grey' %><br /><br />

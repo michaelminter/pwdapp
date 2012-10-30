@@ -1,0 +1,85 @@
+#primary-nav {
+    float: right;
+    font-size: 13px;
+	margin:0px;
+	padding:0px;
+}
+#primary-nav ul {
+    line-height: 35px;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+#primary-nav ul a {
+    display: block;
+    position: relative;
+}
+#primary-nav ul li {
+    float: left;
+    position: relative;
+    z-index: 40;
+}
+#primary-nav ul li:hover {
+    visibility: inherit;
+}
+#primary-nav ul ul {
+    position: absolute;
+    top: -9999em;
+    width: 150px;
+}
+#primary-nav ul ul li {
+    width: 100%;
+}
+#primary-nav ul li:hover ul, #primary-nav ul li.sfHover ul {
+    left: -1px;
+    top: 25px;
+    z-index: 99;
+}
+#primary-nav ul li:hover li ul, #primary-nav ul li.sfHover li ul, #primary-nav ul li li:hover li ul, #primary-nav ul li li.sfHover li ul, #primary-nav ul li li li:hover li ul, #primary-nav ul li li li.sfHover li ul {
+    top: -9999em;
+}
+#primary-nav ul li li:hover ul, #primary-nav ul li li.sfHover ul, #primary-nav ul li li li:hover ul, #primary-nav ul li li li.sfHover ul, #primary-nav ul li li li li:hover ul, #primary-nav ul li li li li.sfHover ul {
+    left: 180px;
+    top: -1px;
+}
+#primary-nav ul a {
+    color: #888888;
+    font-weight: bold;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 15px;
+}
+#primary-nav ul li a:hover, #primary-nav ul li:hover, #primary-nav ul li.sfHover a, #primary-nav ul li.current-cat a, #primary-nav ul li.current_page_item a, #primary-nav ul li.current-menu-item a {
+    text-decoration: none;
+}
+#primary-nav ul ul {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    margin: 10px 0 0;
+    padding: 10px 15px;
+}
+#primary-nav ul ul li {
+    background: none repeat scroll 0 0 transparent;
+    border-bottom: 1px solid #F0F0F0;
+    float: none;
+    height: 35px;
+    line-height: 35px;
+}
+#primary-nav ul ul li:last-child {
+    border-bottom: medium none;
+}
+#primary-nav ul ul li a {
+    font-size: 12px;
+    font-weight: normal;
+    height: 35px;
+    line-height: 35px;
+    padding: 0;
+}
+#primary-nav ul li.sfHover ul a {
+    color: #999999 !important;
+}
+#primary-nav ul li.sfHover ul a:hover {
+    color: #444444 !important;
+}

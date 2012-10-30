@@ -1,0 +1,11 @@
+<% @title = "Authorize #{@location.name}" %>
+<% @breadcrumb = 'Authorize' %>
+
+<%= form_for 'request', :url => "/requests/#{@location.id}", :method => :post do |f| %>
+  <%= f.label :login_name, 'Login Name' %>
+  <%= f.text_field :login_name %>
+  <%= f.label :old_password, 'Password' %>
+  <%= f.text_field :old_password %>
+  <br />
+  <%= f.submit 'Authorize Location' %>
+<% end %>

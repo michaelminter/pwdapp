@@ -1,0 +1,13 @@
+<% @title = 'Dashboard' %>
+
+<div class="row-fluid">
+  <div class="block">
+    <p class="block-heading">Available Locations</p>
+    <div class="block-body gallery">
+      <% @locations.each do |location| %>
+        <%= link_to image_tag(location.badge, :size => '100x100', :class => 'img-polaroid', :id => location.id), new_request_url(location.id) %>
+      <% end %>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>

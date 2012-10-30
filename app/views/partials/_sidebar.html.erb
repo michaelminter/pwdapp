@@ -1,0 +1,27 @@
+<div class="sidebar-nav">
+  <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>Dashboard</a>
+  <ul id="dashboard-menu" class="nav nav-list collapse in">
+      <li><a href="/">Home</a></li>
+      <li ><a href="/settings">Settings</a></li>
+      <li ><a href="/">Statistics</a></li>
+      <li ><a href="/">Calendar</a></li>
+  </ul>
+  
+  <% if current_user && current_user.admin? %>
+  <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>Administration<span class="label label-info">+3</span></a>
+  <ul id="accounts-menu" class="nav nav-list collapse">
+      <li ><a href="/locations">Locations</a></li>
+      <li ><a href="/location_groups">Location Groups</a></li>
+      <li ><a href="/users">Users</a></li>
+  </ul>
+  <% end %>
+
+  <a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>Legal</a>
+  <ul id="legal-menu" class="nav nav-list collapse">
+      <li ><a href="privacy-policy.html">Privacy Policy</a></li>
+      <li ><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+  </ul>
+
+  <a href="help.html" class="nav-header" ><i class="icon-question-sign"></i>Help</a>
+  <a href="faq.html" class="nav-header" ><i class="icon-comment"></i>Faq</a>
+</div><!-- .sidebar-nav -->

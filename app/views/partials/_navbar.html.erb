@@ -1,0 +1,26 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <% if current_user %>
+    <ul class="nav pull-right">
+      <li><a href="/settings" class="hidden-phone visible-tablet visible-desktop" role="button">Settings</a></li>
+      <li id="fat-menu" class="dropdown">
+        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+          <img src="<%= current_user.gravatar_path 22 %>" /> &nbsp; <%= current_user.email %>
+          <i class="icon-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <% if user_signed_in? %>
+          <li><%= button_to 'Sign out', destroy_user_session_path, :method => :delete, :tabindex => '-1' %></li>
+          <% else %>
+          <li><%= link_to 'Login', new_user_session_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to 'Sign up', new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      </li>
+    </ul>
+    <% end %>
+    <a class="brand" href="/"><span class="first">Pwd</span><span class="second">app</span></a>
+    <% if current_user && current_user.user_locations.count > 0 %><%= button_to 'Request New Password', update_requests_path, :method => :post, :id => 'request_button' %><% end %>
+  </div>
+</div>
